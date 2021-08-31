@@ -45,6 +45,26 @@ function editar($conn) {
 
 }
 
+//* Funcion que elimina el registro en base al ID
+function eliminar($conn) {
+    //* Recibimos el id desde post para eliminar el registro deseado
+    $id = $_POST['id'];
+
+    $sql = "DELETE FROM estado WHERE id=$id";
+
+    //* Observamos el codigo sql para poder probar manualmente
+    //die($sql);
+
+    //* Enviamos la consulta a nuestra conexion en caso de ser afirmativa(utilizable) enviamos al crud
+    //* en caso que no mostramos error
+    if( $conn->query($sql) === TRUE) {
+        header('Location: estados-crud.php');
+    }else {
+        echo ("Error");
+    }
+
+}
+
 //* Evaluamos desde donde recibimos nuestro formulario desde el TIPO
 if(isset($_POST['tipo'])){   
     switch ($_POST['tipo']) {
@@ -57,7 +77,7 @@ if(isset($_POST['tipo'])){
             break;
 
         case 'eliminar':
-            echo "eliminar";
+                eliminar($conn);
             break;
     }
 }

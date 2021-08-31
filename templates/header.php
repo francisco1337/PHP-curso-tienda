@@ -1,4 +1,4 @@
-//* Parte Principal de nuestro sitio llamado Header con nuestras principales librerias de CSS
+<!-- //* Parte Principal de nuestro sitio llamado Header con nuestras principales librerias de CSS -->
 <!DOCTYPE html>
 <html lang="en">
 <head>

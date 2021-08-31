@@ -112,7 +112,6 @@ $resultado = $conn->query($sql);
                                     Eliminar
                                   </button>
                                 </form>
-
                               </div>
 
 
